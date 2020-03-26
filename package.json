@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.4.0",
+    "@vuepress/plugin-nprogress": "^1.4.0",
+    "vuepress": "^1.4.0"
+  }
+}
