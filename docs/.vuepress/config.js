@@ -17,7 +17,7 @@ module.exports = {
           },
           {
             text: 'Android 端（GitHub）',
-            link: 'https://github.com/DUpdateSystem'
+            link: 'https://github.com/DUpdateSystem/UpgradeAll/releases'
           }
         ]
       },
