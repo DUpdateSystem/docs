@@ -36,7 +36,6 @@ module.exports = {
       {
         title: '参与我们',
         path: '/joinus/',
-        collapsable: false,
         children: ['/joinus/', '/joinus/docs']
       }
     ],
