@@ -7,7 +7,7 @@ module.exports = {
     nav: [
       { text: '使用指南', link: '/guide/' },
       { text: 'FAQ', link: '/faq/' },
-      { text: '加入我们', link: '/joinus/' },
+      { text: '参与我们', link: '/joinus/' },
       {
         text: '客户端下载',
         items: [
@@ -25,9 +25,20 @@ module.exports = {
     ],
     sidebarDepth: 2,
     sidebar: [
-      ['/', '主页'],
-      ['/guide/', '使用指南'],
-      ['/faq/', 'FAQ']
+      {
+        title: '使用指南',
+        path: '/guide/'
+      },
+      {
+        title: 'FAQ',
+        path: '/faq/'
+      },
+      {
+        title: '参与我们',
+        path: '/joinus/',
+        collapsable: false,
+        children: ['/joinus/', '/joinus/docs']
+      }
     ],
     lastUpdated: '最后更新时间'
   },
