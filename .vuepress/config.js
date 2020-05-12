@@ -36,7 +36,7 @@ module.exports = {
       {
         title: '参与我们',
         path: '/joinus/',
-        children: ['/joinus/', '/joinus/docs']
+        children: ['/joinus/', '/joinus/docs', 'joinus/app-rules' , 'joinus/python-scripts', 'joinus/bs4-function']
       }
     ],
     lastUpdated: '最后更新时间'
