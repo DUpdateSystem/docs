@@ -1,4 +1,8 @@
-# 参与文档编写
+# 文档编写
+
+::: tip 提示
+请先了解[贡献准则](./contributing.html)，若已查看请忽略。
+:::
 
 本文档使用 [vuepress](https://vuepress.vuejs.org/zh/) 生成，目前托管于 [ZEIT](https://zeit.co/)。
 

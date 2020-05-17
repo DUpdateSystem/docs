@@ -1,4 +1,8 @@
-# 参与 Python 脚本编写
+# Python 脚本编写
+
+::: tip 提示
+请先了解[贡献准则](./contributing.html)，若已查看请忽略。
+:::
 
 ## 开发环境及库
 
