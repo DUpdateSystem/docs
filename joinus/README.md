@@ -6,8 +6,8 @@
 建议使用 issues 来告诉我们，这样便于管理及查看。提 issues 前查看 [issue 准则](./contributing.html#issue-准则)。
 :::
 
-1. [QQ 群](https://jq.qq.com/?_wv=1027&k=5SUNszN)（群号：`916736220`）
-2. [Telegram 群组](https://t.me/DUpdateSystem)
+1. [Telegram 群组](https://t.me/DUpdateSystem)（推荐）
+2. [QQ 群](https://jq.qq.com/?_wv=1027&k=5SUNszN)（群号：`916736220`）
 3. issue：
    1. [服务端相关](https://github.com/DUpdateSystem/Server/issues)
    2. [Android 客户端相关](https://github.com/DUpdateSystem/UpgradeAll/issues)
