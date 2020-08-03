@@ -4,8 +4,8 @@
     "build": "vuepress build ."
   },
   "devDependencies": {
-    "@vuepress/plugin-active-header-links": "^1.4.0",
-    "@vuepress/plugin-nprogress": "^1.4.0",
-    "vuepress": "^1.4.0"
+    "@vuepress/plugin-active-header-links": "^1.5.2",
+    "@vuepress/plugin-nprogress": "^1.5.2",
+    "vuepress": "^1.5.2"
   }
 }
