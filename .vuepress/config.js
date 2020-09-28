@@ -38,15 +38,23 @@ module.exports = {
         path: '/faq/',
       },
       {
+        title: '开发者文档',
+        path: '/dev/',
+        children: [
+          '/dev/',
+          '/dev/app-json-rules',
+          '/dev/hub-json-rules',
+          '/dev/python-scripts',
+          '/dev/bs4-function',
+          '/dev/contributing',
+        ],
+      },
+      {
         title: '参与我们',
         path: '/joinus/',
         children: [
           '/joinus/',
-          '/joinus/contributing',
           '/joinus/docs',
-          'joinus/app-rules',
-          'joinus/python-scripts',
-          'joinus/bs4-function',
         ],
       },
     ],

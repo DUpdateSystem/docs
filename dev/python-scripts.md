@@ -1,4 +1,4 @@
-# Python 脚本编写
+# 软件源脚本编写
 
 ::: tip 提示
 请先了解[贡献准则](./contributing.html)，若已查看请忽略。
@@ -39,7 +39,7 @@ hub_dict = {
 此文件为 Python 脚本应该继承的抽象基类。  
 基类规定了你的 Python 脚本应该实现的供 Server 调用的接口，函数实现方法不做限制，接口函数的注释详细地说明了这些函数的输入输出值。
 
-### 待编写的 Python 脚本
+### 你编写的 Python 脚本
 
 文件名与类名：相应软件源的英文名称。  
 文件路径：`/app/server/hubs/library/<your_script_name>.py`

@@ -3,7 +3,7 @@
 欢迎加入群组与我们讨论交流，如果有任何的想法或需求都可以在群组或者在 issue 中告诉我们。
 
 ::: tip 提示
-建议使用 issues 来告诉我们，这样便于管理及查看。提 issues 前查看 [issue 准则](./contributing.html#issue-准则)。
+建议使用 issues 来告诉我们，这样便于管理及查看。提 issues 前查看 [issue 准则](../dev/contributing#issue-准则)。
 :::
 
 1. [Telegram 群组](https://t.me/DUpdateSystem)（推荐）
