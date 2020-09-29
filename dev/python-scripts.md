@@ -1,7 +1,7 @@
 # 软件源脚本编写
 
-::: tip 提示
-请先了解[贡献准则](./contributing.html)，若已查看请忽略。
+::: tip 提示  
+请先了解[贡献准则](./contributing.html)，若已查看请忽略。  
 :::
 
 ## 开发环境及库
@@ -34,7 +34,7 @@ hub_dict = {
 }
 ```
 
-### [/app/server/hubs/base_hub.py](https://github.com/DUpdateSystem/Server/blob/master/app/server/hubs/base_hub.py)
+### [/app/server/hubs/base_hub.py](https://github.com/DUpdateSystem/Server/blob/master/server/app/server/hubs/base_hub.py)
 
 此文件为 Python 脚本应该继承的抽象基类。  
 基类规定了你的 Python 脚本应该实现的供 Server 调用的接口，函数实现方法不做限制，接口函数的注释详细地说明了这些函数的输入输出值。
@@ -43,45 +43,50 @@ hub_dict = {
 
 文件名与类名：相应软件源的英文名称。  
 文件路径：`/app/server/hubs/library/<your_script_name>.py`
-::: tip 提示
+
+::: tip 提示  
 你需要在这个文件中继承 base_hub 并实现它。  
 脚本文件内部结构不做要求，能够正常实例化就行。  
-理论上来说，你可以为将软件源的实现~~拆分为多个脚本文件~~，但为了保持目录结构的整洁，我们非常希望您不要这样做。
+理论上来说，你可以为将软件源的实现~~拆分为多个脚本文件~~，但为了保持目录结构的整洁，我们非常希望您不要这样做。  
 :::
 
 ## Python 脚本接口函数
 
-### get_release_info
+### get_release
 
-获取更新版本信息
+批量获取更新版本信息
 
 - **输入**
 
-app_id（包含字典的数组）：
+1. app_id(dict)
+   客户端上传的需要检查的软件信息
 
-```python
-# Github 源
-[
-    {key : "owner", value : "DUpdateSystem"},
-    {key : "repo", value : "UpgradeAll"}
-]
-# CoolApk 源
-[
-    {key : "android_app_package", value : "net.xzos.upgradeall"}
-]
-```
+   ::: tip 提示  
+   你可以通过[软件源配置文件](./app-rules.html#api-keywords)指定你所需要的属性值。  
+   :::
 
-这是一个包含多个相同格式的字典的数组。  
-每个字典的格式是固定的，它表示了一个可以确定软件的属性。
+   ```python
+   # Github 源
+   {
+     "user": "DUpdateSystem",
+     "repo": "UpgradeAll"
+   }
 
-::: tip 提示
-你可以通过[软件源配置文件](./app-rules.html#api-keywords)指定你所需要的属性值。  
-你可以将它视为一种字典，我们为你准备了便捷解析它的函数 [get_value_from_app_id](#get_value_from_app_id)
-:::
+   # CoolApk 源
+   {
+     "android_app_package": "net.xzos.upgradeall",
+   }
+   ```
+
+2. auth(dict)
+   软件源身份验证信息
 
 - **输出**
 
-Python 数组或 JSON 数组：
+Python 数组
+
+> 这是一个包含多个相同格式的字典的数组。  
+> 每个字典的格式是固定的，它表示了一个版本的信息（版本号、更新日志、安装文件）。
 
 ```python
 [{
@@ -97,39 +102,65 @@ Python 数组或 JSON 数组：
 }]
 ```
 
-这是一个包含多个相同格式的字典的数组。  
-每个字典的格式是固定的，它表示了一个版本的信息（版本号、更新日志、安装文件）。
-
 ### get_download_info
 
 - **输入**
 
-1. app_id（包含字典的数组）。与 [get_release_info 函数](#get-release-info)相同
-2. asset_index（下载文件索引数组）：
+1. app_id(dict)
+   客户端上传的需要检查的软件信息
+   与 [get_release 函数](#get_release)相同
+2. asset_index(list)
+   请求下载的文件索引数组
+   这是一个由数字组成的数组，从左到右分别表示版本号索引和下载文件索引（从 0 开始数）。
 
    ```python
    [0, 0]  # 最新版本的第二个文件
    ```
 
-   这是一个由数字组成的数组。  
-   从左到右分别表示版本号索引和下载文件索引（从 0 开始数）。
+3. auth(dict)
+   软件源身份验证信息
 
 - **输出**
 
 Python 数组或 JSON 数组：
 
 ```python
-{
-    url: "example.com/download",
-    request_header : {
-        "Cookie": "user=user_name;example_arg=gugugu"
-    }
-}
+[
+  ({url}, {request_header_dict}),
+]
 ```
 
-这是一个包含基本下载信息的字典。  
-它只包含下载地址与下载时使用的请求头。  
-客户端将使用这些信息下载文件（如果 url 不为空，将使用这里提供的 url，而忽略 get_release_info 函数提供的下载地址）。
+包含下载下载地址与请求头。  
+若返回值不为 None 或空，客户端将使用这些信息下载文件；
+若返回值为空，将使用 get_release 函数提供的下载地址。
+
+### get_release_list(async 函数)
+
+批量获取更新版本信息，你可以把它视为对多次执行 get_release 函数的异步打包。
+
+> 对于一些可以把所有或者多个软件信息打包返回的软件源，你可以使用重写该函数，以实现更快地向客户端返回数据。  
+> 但因为实现较为复杂，也许你需要参考 base_hub 的实现或者查看源码。
+
+- **输入**
+
+1. generator_cache(GeneratorCache)
+   用来即时返回数据的数据类，配合 return_value 函数返回数据
+
+2. app_id_list(list)  
+   客户端上传的**多个**需要检查的软件的信息(每一项的格式参考 [get_release 函数](#get_release))
+
+3. auth(dict)
+   软件源身份验证信息
+
+- **输出**
+
+需要使用 return_value 函数和 generator_cache 对象返回数据
+
+return_value(generator_cache: GeneratorCache, app_id: dict, value)
+
+> - generator_cache: 这个函数的同名输入值
+> - app_id: 返回的 value 对应的 app_id
+> - value: [get_release 函数](#get_release) 函数的返回值
 
 ## 预置函数
 
@@ -147,13 +178,13 @@ UpgradeAll 目前提供了一些简单封装的常用操作，以函数的形式
 
 函数使用参考 [Python logging 官方文档](https://docs.python.org/zh-cn/3.8/library/logging.html#logging.debug)
 
-::: tip 提示
+::: tip 提示  
 一般来说，你只需要根据日志等级选择需要的函数，并输入需要打印的日志字符串即可。  
-建议：如果你不习惯使用 logging 函数，直接使用 print 函数也是不错的选择。
+建议：如果你不习惯使用 logging 函数，直接使用 print 函数也是不错的选择。  
 :::
 
-::: danger 警告
-因服务端暂未实现日志分类，为了保持服务端日志清晰，当您调试完成提交之前，请注释在软件源脚本中的所有日志函数
+::: danger 警告  
+因服务端暂未实现日志分类，为了保持服务端日志清晰，当您调试完成提交之前，请注释在软件源脚本中的所有日志函数  
 :::
 
 ### 数据处理
@@ -177,7 +208,7 @@ UpgradeAll 目前提供了一些简单封装的常用操作，以函数的形式
 - **异常处理**
 
   - HTTP 状态异常：  
-   当 HTTP 请求返回不正常的状态码时，抛出异常。详细信息参考 [requests 官方文档](https://requests.readthedocs.io/en/master/user/quickstart/#response-status-codes)
+    当 HTTP 请求返回不正常的状态码时，抛出异常。详细信息参考 [requests 官方文档](https://requests.readthedocs.io/en/master/user/quickstart/#response-status-codes)
 
 #### get_response
 
@@ -228,25 +259,63 @@ string：需匹配的字符串。
 若输入不为 None，使用 re 库匹配输入字符串。  
 若匹配成功不为空，返回符合正则表达式的字符串。  
 若未找到满足条件的字符串，返回 None。
-::: tip 提示
-该函数一般用于 _校验_ 获取的数据是否正确。
+
+::: tip 提示  
+该函数一般用于 _校验_ 获取的数据是否正确。  
 :::
 
-#### get_value_from_app_id
+#### search_url_string
 
-获取 app_id 中的值。
+在字符串中匹配网址。
 
 - **输入**
 
-1. app_id
-2. key，搜索的键。例如：owner、android_app_package。
+string：需匹配的字符串。
 
 - **输出**
 
-搜索到的键值，若没有符合的键则返回 None。
+匹配到的字符串。  
+若输入不为 None，使用 re 库匹配输入字符串。  
+若匹配成功不为空，返回符合正则表达式的字符串。  
+若未找到满足条件的字符串，返回 None。
+
+::: tip 提示  
+该函数一般用于过滤下载地址。  
+:::
+
+#### add_tmp_cache
+
+添加临时缓存
+
+- **输入**
+
+key：缓存的键值。
+value：缓存的字符串。（对于其他数据，你可以尝试自己转换一下）
+
+- **输出**
+
+None
+
+::: tip 提示  
+该函数一般用于缓存大量数据，比如 xp 模块仓库的 api 返回的软件仓库数据。  
+该缓存方法将同时将你的数据缓存到内存和 redis 数据库，便于软件快速调用。  
+:::
+
+#### get_tmp_cache
+
+获取临时缓存
+
+- **输入**
+
+key：缓存的键值。
+
+- **输出**
+
+缓存的字符串或 None
 
 ### NOTE
 
-预置函数只包含了一些预测会经常使用的数据操作模式，它非常有可能不能满足你的需求.  
-如果你认为某种数据操作模式是通用的，请给我们发送 [issue](https://github.com/DUpdateSystem/Server/issues/new/choose)与我们讨论后
-提交你的 [pull requests](https://github.com/DUpdateSystem/Server/pulls) 或 让我们来实现它 :)
+大部分预置函数位于 [hub_script_utils.py](https://github.com/DUpdateSystem/Server/blob/master/server/app/server/hubs/hub_script_utils.py)。  
+只包含了一些预测会经常使用的数据操作模式，它非常有可能不能满足你的需求。  
+如果你认为某种数据的操作模式是通用的，请给我们发送 [issue](https://github.com/DUpdateSystem/Server/issues/new/choose) 与我们讨论。  
+然后，提交你的 [Pull requests](https://github.com/DUpdateSystem/Server/pulls) 或 让我们来实现它 :)
