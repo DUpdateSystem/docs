@@ -11,6 +11,7 @@ module.exports = {
     nav: [
       { text: '使用指南', link: '/guide/' },
       { text: 'FAQ', link: '/faq/' },
+      { text: '开发文档', link: '/dev/' },
       { text: '参与我们', link: '/joinus/' },
       {
         text: '客户端下载',
