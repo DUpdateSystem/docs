@@ -43,6 +43,7 @@ module.exports = {
         path: '/dev/',
         children: [
           '/dev/',
+          '/dev/file-dir-structure',
           '/dev/app-json-rules',
           '/dev/hub-json-rules',
           '/dev/python-scripts',
