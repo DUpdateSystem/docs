@@ -1,4 +1,5 @@
 # 跟踪项配置编写
+
 ## JSON 内容示意
 
 ```json
@@ -15,7 +16,7 @@
       "hub_uuid": "fd9b2602-62c5-4d55-bd1e-0d6537714ca0"
     },
     "target_checker": {
-      "api": "App_Package",
+      "api": "app_package",
       "extra_string": "net.xzos.upgradeall"
     }
   }
@@ -66,14 +67,16 @@
 
 ##### hub_uuid
 
-跟踪项调用的软件源的 UUID（UpgradeAll 软件使用 UUID 识别软件源）  
->软件源UUID:  
->- GITHUB：fd9b2602-62c5-4d55-bd1e-0d6537714ca0  
->- COOLAPK：1c010cc9-cff8-4461-8993-a86cd190d377  
->- 手机乐园：1c010cc9-cff8-4461-8993-a86mm190d377  
->- F-droid：6a6d590b-1809-41bf-8ce3-7e3f6c8da945  
->- GITLAB：a84e2fbe-1478-4db5-80ae-75d00454c7eb  
->- Xposed Module Repository：e02a95a2-af76-426c-9702-c4c39a01f891  
+跟踪项调用的软件源的 UUID（UpgradeAll 软件使用 UUID 识别软件源）
+
+> 软件源 UUID:
+>
+> - GITHUB：fd9b2602-62c5-4d55-bd1e-0d6537714ca0
+> - COOLAPK：1c010cc9-cff8-4461-8993-a86cd190d377
+> - 手机乐园：1c010cc9-cff8-4461-8993-a86mm190d377
+> - F-droid：6a6d590b-1809-41bf-8ce3-7e3f6c8da945
+> - GITLAB：a84e2fbe-1478-4db5-80ae-75d00454c7eb
+> - Xposed Module Repository：e02a95a2-af76-426c-9702-c4c39a01f891
 
 #### target_checker
 
@@ -85,10 +88,10 @@ UpgradeAll 将通过哪个 API 获取被跟踪的软件的本地信息
 
 > 可能的值:
 >
-> - App_Package（软件包名）
-> - Magisk_Module（Magisk 模块文件夹名）
-> - Shell（自定义 Shell 命令）
-> - Shell_Root（具有 Root 权限的自定义 Shell 命令）
+> - app_package（软件包名）
+> - magisk_module（Magisk 模块文件夹名）
+> - shell（自定义 Shell 命令）
+> - shell_root（具有 Root 权限的自定义 Shell 命令）
 
 ##### extra_string
 
@@ -98,4 +101,3 @@ UpgradeAll 将通过哪个 API 获取被跟踪的软件的本地信息
 - 软件包名
 - Magisk 模块文件夹名
 - Shell 命令
-
