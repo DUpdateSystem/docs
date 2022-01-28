@@ -3,7 +3,7 @@
 检查云端仓库地址是否正确。目前我们支持三个网址，请自行选择。推荐使用 jsdelivr CDN 源。
 
 1. [Coding 源（GitHub 镜像源）](https://dupdatesystem.coding.net/p/UpgradeAll-rules/d/UpgradeAll-rules/git/raw/master/rules/rules.json)
-2. [Jsdelivr CND 源（GitHub 文件加速）](https://cdn.jsdelivr.net/gh/DUpdateSystem/UpgradeAll-rules@master/rules/rules.json)
+2. [Jsdelivr CDN 源（GitHub 文件加速）](https://cdn.jsdelivr.net/gh/DUpdateSystem/UpgradeAll-rules@master/rules/rules.json)
 3. [GitHub 源](https://raw.githubusercontent.com/DUpdateSystem/UpgradeAll-rules/master/rules/rules.json)
 
 ## 快速进入项目或应用主页
