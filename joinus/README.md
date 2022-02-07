@@ -1,14 +1,11 @@
 # 参与讨论
 
-欢迎加入群组与我们讨论交流，如果有任何的想法或需求都可以在群组或者在 issue 中告诉我们。
+If you have any ideas or needs, please let us know in the group or raise an issue
 
-::: tip 提示
-建议使用 issues 来告诉我们，这样便于管理及查看。提 issues 前查看 [issue 准则](../dev/contributing#issue-准则)。
-:::
-
-1. [Telegram 群组](https://t.me/DUpdateSystem)（推荐）
-2. [QQ 群](https://jq.qq.com/?_wv=1027&k=5SUNszN)（群号：`916736220`）
+1. [Telegram Group](https://t.me/DUpdateSystem)（Recommanded）
+2. [QQ Group](https://jq.qq.com/?_wv=1027&k=5SUNszN)（Group Number：`916736220`）
 3. issue：
-   1. [服务端相关](https://github.com/DUpdateSystem/Server/issues)
-   2. [Android 客户端相关](https://github.com/DUpdateSystem/UpgradeAll/issues)
-   3. [文档相关（建议、错误等...）](https://github.com/DUpdateSystem/docs/issues)
+   1. [Server related](https://github.com/DUpdateSystem/Server/issues)
+   2. [Android Client related](https://github.com/DUpdateSystem/UpgradeAll/issues)
+   3. [App Hub related](https://github.com/DUpdateSystem/UpgradeAll-rules/issues/new/choose)
+   3. [Documentation related (suggestions, errors, etc.)](https://github.com/DUpdateSystem/docs/issues)
