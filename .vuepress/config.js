@@ -4,25 +4,33 @@ module.exports = {
   head: [['link', { rel: 'icon', href: '/logo.png' }]],
   locales: {
     '/': {
-      lang: 'zh-CN',
+      lang: 'en-US',
     },
   },
   themeConfig: {
     nav: [
-      { text: '使用指南', link: '/guide/' },
+      { text: 'User Guide', link: '/guide/' },
       { text: 'FAQ', link: '/faq/' },
-      { text: '开发文档', link: '/dev/' },
-      { text: '参与我们', link: '/joinus/' },
+      { text: 'Developer Documentation', link: '/dev/' },
+      { text: 'Join Us', link: '/joinus/' },
       {
-        text: '客户端下载',
+        text: 'Downloads',
         items: [
           {
-            text: 'Android 端（酷安）',
+            text: 'Coolapk',
             link: 'https://www.coolapk.com/apk/net.xzos.upgradeall',
           },
           {
-            text: 'Android 端（GitHub）',
+            text: 'Github',
             link: 'https://github.com/DUpdateSystem/UpgradeAll/releases',
+          },
+          {
+            text: 'F-Droid',
+            link: 'https://f-droid.org/packages/net.xzos.upgradeall',
+          },
+          {
+            text: 'Telegram CI',
+            link: 'https://t.me/upallci',
           },
         ],
       },
@@ -31,15 +39,19 @@ module.exports = {
     sidebarDepth: 2,
     sidebar: [
       {
-        title: '使用指南',
+        title: 'User Guide',
         path: '/guide/',
+        children: [
+          '/guide/',
+          '/guide/magisk',
+        ],
       },
       {
         title: 'FAQ',
         path: '/faq/',
       },
       {
-        title: '开发者文档',
+        title: 'Developer Documentation',
         path: '/dev/',
         children: [
           '/dev/',
@@ -52,7 +64,7 @@ module.exports = {
         ],
       },
       {
-        title: '参与我们',
+        title: 'Join Us',
         path: '/joinus/',
         children: [
           '/joinus/',
@@ -60,7 +72,7 @@ module.exports = {
         ],
       },
     ],
-    lastUpdated: '最后更新时间',
+    lastUpdated: 'Latest Update',
   },
   plugins: [['@vuepress/active-header-links'], ['@vuepress/back-to-top']],
 };

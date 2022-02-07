@@ -1,23 +1,19 @@
-## 云端仓库网络错误
+## Cloud-based repository network error
 
-检查云端仓库地址是否正确。目前我们支持三个网址，请自行选择。推荐使用 jsdelivr CDN 源。
+Check if the cloud repository address is correct. Currently we support three URLs, please choose your own. We recommend using the `jsdelivr CDN` source.
 
-1. [Coding 源（GitHub 镜像源）](https://dupdatesystem.coding.net/p/UpgradeAll-rules/d/UpgradeAll-rules/git/raw/master/rules/rules.json)
-2. [Jsdelivr CDN 源（GitHub 文件加速）](https://cdn.jsdelivr.net/gh/DUpdateSystem/UpgradeAll-rules@master/rules/rules.json)
-3. [GitHub 源](https://raw.githubusercontent.com/DUpdateSystem/UpgradeAll-rules/master/rules/rules.json)
+1. [Coding (For China Mainland)](https://dupdatesystem.coding.net/p/UpgradeAll-rules/d/UpgradeAll-rules/git/raw/master/rules/rules.json)
+2. [Jsdelivr CDN (Recommanded for areas which cant access Github well)](https://cdn.jsdelivr.net/gh/DUpdateSystem/UpgradeAll-rules@master/rules/rules.json)
+3. [GitHub](https://raw.githubusercontent.com/DUpdateSystem/UpgradeAll-rules/master/rules/rules.json)
 
-## 快速进入项目或应用主页
+## Quick access to project or app home page
 
-点击更新数据下面的网址即可跳转。
+Click on the URL below the updated data to jump to it.
 
-## 更换侧滑顶部的背景图片
+## View check updates progress
 
-打开侧滑，点击上方蓝色方块，选择一张你想设为背景的图片，就可以了。
+Open the notification bar and you can see the progress. If not, you may have disabled the notification permission, just turn it on in the settings.
 
-## 查看下载进度
+## View download progress
 
-打开通知栏，即可看见进度。如没有，可能是禁用了通知权限，在设置中打开即可。
-
-## 修改分组设置
-
-长按分组即可设置。可以添加分组、设置分组图标和标题。
+Open the notification bar and you can see the progress. If not, you may have disabled the notification permission, just turn it on in the settings.

@@ -4,14 +4,14 @@ Check for Android apps, Magisk modules and more!
 
 UpgradeAll currently consists of a server-side and a client-side. The server side regularly crawls and caches. The client gets the updated data via api and displays it.
 
-## How to add apps
+## How to add Magisk Modules
 
-### Add Apps
+### Add Magisk Modules
 <img src="../source/screenshot/1.png" alt="ScreenShot" height="520">
 <img src="../source/screenshot/2.png" alt="ScreenShot" height="520">
 
 1. Open `App Hub` page from home page
-2. Open `App Hub` you want to use
+2. Open `App Hub` you want to use()
 3. Open `Application Market` mode to detect updates for all installed apps
 
 ### Add apps via cloud-based repository
