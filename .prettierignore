@@ -1,0 +1,7 @@
+.vuepress/.cache
+.vuepress/.temp
+.vuepress/dist
+.vuepress/public
+**/node_modules/**
+
+pnpm-lock.yaml
