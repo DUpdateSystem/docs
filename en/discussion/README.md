@@ -1,4 +1,4 @@
-# 参与讨论
+# Discussion
 
 If you have any ideas or needs, please let us know in the group or raise an issue
 
@@ -8,4 +8,4 @@ If you have any ideas or needs, please let us know in the group or raise an issu
    1. [Server related](https://github.com/DUpdateSystem/Server/issues)
    2. [Android Client related](https://github.com/DUpdateSystem/UpgradeAll/issues)
    3. [App Hub related](https://github.com/DUpdateSystem/UpgradeAll-rules/issues/new/choose)
-   3. [Documentation related (suggestions, errors, etc.)](https://github.com/DUpdateSystem/docs/issues)
+   4. [Documentation related (suggestions, errors, etc.)](https://github.com/DUpdateSystem/docs/issues)

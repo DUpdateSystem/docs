@@ -41,10 +41,7 @@ module.exports = {
       {
         title: 'User Guide',
         path: '/guide/',
-        children: [
-          '/guide/',
-          '/guide/magisk',
-        ],
+        children: ['/guide/', '/guide/magisk'],
       },
       {
         title: 'FAQ',
@@ -66,10 +63,7 @@ module.exports = {
       {
         title: 'Join Us',
         path: '/joinus/',
-        children: [
-          '/joinus/',
-          '/joinus/docs',
-        ],
+        children: ['/joinus/', '/joinus/docs'],
       },
     ],
     lastUpdated: 'Latest Update',
