@@ -42,4 +42,3 @@
 ### rules/hub/js
 
 存放所有软件源相关的 JavaScript 脚本
-
