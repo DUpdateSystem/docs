@@ -1,4 +1,6 @@
-# Introduction
+# 用户指南
+
+## Introduction
 
 Check for Android apps, Magisk modules and more!
 
@@ -7,6 +9,7 @@ UpgradeAll currently consists of a server-side and a client-side. The server sid
 ## How to add apps
 
 ### Add Apps
+
 <img src="../source/screenshot/1.png" alt="ScreenShot" height="520">
 <img src="../source/screenshot/2.png" alt="ScreenShot" height="520">
 
@@ -15,6 +18,7 @@ UpgradeAll currently consists of a server-side and a client-side. The server sid
 3. Open `Application Market` mode to detect updates for all installed apps
 
 ### Add apps via cloud-based repository
+
 <img src="../source/screenshot/3.png" alt="ScreenShot" height="520">
 <img src="../source/screenshot/4.png" alt="ScreenShot" height="520">
 
@@ -23,22 +27,22 @@ UpgradeAll currently consists of a server-side and a client-side. The server sid
 
 ### Add apps manually
 
-::: warning Attention
+::: warning
 Please make sure that the corresponding `App Hub` has been added manually!
 :::
 
 <img src="../source/screenshot/5.png" alt="ScreenShot" height="520">
 <img src="../source/screenshot/6.png" alt="ScreenShot" height="520">
 
-1. Click `Apps` page top right corner `Add App` 
+1. Click `Apps` page top right corner `Add App`
 
 Take `UpgradeAll` as example:  
 `https://github.com/DUpdateSystem/UpgradeAll`
+
 1. `Name` Fill in the name of the tracking app you want to set (feel free to do so)
 2. Add attributes first(we need three attributes), then select `android_app_package` on key and fill in the value with the package name of `UpgradeAll`: `net.xzos.upgradeall`
 3. Select `owner` and fill in the value with the repo owner `DUpdateSystem`
 4. After that, Select `repo` and fill in the value with the project name `UpgradeAll`.
-
 
 ### Auto-add apps
 

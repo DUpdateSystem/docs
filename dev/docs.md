@@ -1,6 +1,6 @@
 # 文档编写
 
-::: tip 提示
+::: tip
 请先了解[贡献准则](./contributing.html)，若已查看请忽略。
 :::
 
@@ -30,7 +30,7 @@
 
 ## 配置文件部分说明
 
-::: tip 提示
+::: tip
 修改配置后重新运行 `yarn dev` 才会生效。
 :::
 
@@ -52,18 +52,18 @@ module.exports = {
         items: [
           {
             text: 'Android 端（酷安）',
-            link: 'https://www.coolapk.com/apk/net.xzos.upgradeall'
+            link: 'https://www.coolapk.com/apk/net.xzos.upgradeall',
           },
           {
             text: 'Android 端（GitHub）',
-            link: 'https://github.com/DUpdateSystem/UpgradeAll/releases'
-          }
-        ]
+            link: 'https://github.com/DUpdateSystem/UpgradeAll/releases',
+          },
+        ],
       },
-      { text: 'GitHub', link: 'https://github.com/DUpdateSystem' }
-    ]
-  }
-}
+      { text: 'GitHub', link: 'https://github.com/DUpdateSystem' },
+    ],
+  },
+};
 ```
 
 ### themeConfig.sidebar
@@ -77,14 +77,14 @@ module.exports = {
     sidebar: [
       {
         title: 'FAQ',
-        path: '/faq/'
+        path: '/faq/',
       },
       {
         title: '参与我们',
         path: '/joinus/',
-        children: ['/joinus/', '/joinus/docs']
-      }
-    ]
-  }
-}
+        children: ['/joinus/', '/joinus/docs'],
+      },
+    ],
+  },
+};
 ```
