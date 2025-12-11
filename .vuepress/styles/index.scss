@@ -1,0 +1,421 @@
+// ============================================
+// DARK TECH THEME - CSS Variable Overrides
+// ============================================
+
+// Force dark mode as default
+:root {
+  color-scheme: dark;
+}
+
+// Primary accent colors - Cyan/Teal tech gradient
+:root,
+[data-theme='dark'] {
+  // Accent colors - Vibrant cyan/teal for tech feel
+  --vp-c-accent: #00d4aa;
+  --vp-c-accent-bg: #00b894;
+  --vp-c-accent-hover: #00e6b8;
+  --vp-c-accent-text: #0a0a0a;
+  --vp-c-accent-soft: rgba(0, 212, 170, 0.15);
+
+  // Deep dark backgrounds
+  --vp-c-bg: #0a0f1a;
+  --vp-c-bg-alt: #0d1321;
+  --vp-c-bg-elv: #111827;
+
+  // Light text on dark
+  --vp-c-text: rgba(236, 240, 250, 0.92);
+  --vp-c-text-mute: rgba(236, 240, 250, 0.72);
+  --vp-c-text-subtle: rgba(236, 240, 250, 0.52);
+
+  // Borders with subtle glow potential
+  --vp-c-divider: #1e293b;
+  --vp-c-border: #334155;
+  --vp-c-border-hard: #475569;
+
+  // Shadows for depth
+  --vp-c-shadow: rgba(0, 212, 170, 0.08);
+
+  // Control elements
+  --vp-c-control: rgba(0, 212, 170, 0.08);
+  --vp-c-control-hover: rgba(0, 212, 170, 0.15);
+  --vp-c-control-disabled: #1e293b;
+
+  // Code blocks - darker with accent highlights
+  --vp-code-c-bg: #0d1117;
+  --vp-code-c-text: #e6edf3;
+
+  // Custom: Gradient accent for special elements
+  --tech-gradient: linear-gradient(
+    135deg,
+    #00d4aa 0%,
+    #0099ff 50%,
+    #8b5cf6 100%
+  );
+  --tech-gradient-soft: linear-gradient(
+    135deg,
+    rgba(0, 212, 170, 0.2) 0%,
+    rgba(0, 153, 255, 0.2) 50%,
+    rgba(139, 92, 246, 0.2) 100%
+  );
+  --tech-glow: 0 0 20px rgba(0, 212, 170, 0.3);
+}
+
+// Light mode override (if users switch)
+[data-theme='light'] {
+  --vp-c-accent: #059669;
+  --vp-c-accent-bg: #10b981;
+  --vp-c-bg: #f8fafc;
+  --vp-c-bg-alt: #f1f5f9;
+}
+
+// ============================================
+// VISUAL ENHANCEMENTS
+// ============================================
+
+// Smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Global font improvements
+body {
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ============================================
+// NAVBAR ENHANCEMENTS
+// ============================================
+
+.vp-navbar {
+  backdrop-filter: blur(12px);
+  background: rgba(10, 15, 26, 0.85) !important;
+  border-bottom: 1px solid var(--vp-c-divider);
+
+  .site-name {
+    background: var(--tech-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+}
+
+// Navbar links hover effect
+.vp-navbar .nav-item .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--tech-gradient);
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after,
+  &.active::after {
+    width: 100%;
+  }
+}
+
+// ============================================
+// SIDEBAR ENHANCEMENTS
+// ============================================
+
+.vp-sidebar {
+  background: var(--vp-c-bg-alt);
+  border-right: 1px solid var(--vp-c-divider);
+
+  .sidebar-item {
+    border-radius: 8px;
+    margin: 2px 8px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: var(--vp-c-control-hover);
+    }
+
+    &.active {
+      background: var(--tech-gradient-soft);
+      border-left: 3px solid var(--vp-c-accent);
+    }
+  }
+}
+
+// ============================================
+// HOMEPAGE HERO ENHANCEMENTS
+// ============================================
+
+.vp-hero {
+  padding: 4rem 0 6rem;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(0, 212, 170, 0.1) 0%,
+    transparent 50%
+  );
+
+  .vp-hero-image {
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(0, 212, 170, 0.3));
+  }
+
+  .vp-hero-info-wrapper {
+    h1 {
+      background: var(--tech-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .description {
+      font-size: 1.25rem;
+      color: var(--vp-c-text-mute);
+    }
+  }
+}
+
+// Floating animation for hero image
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+// ============================================
+// ACTION BUTTONS (HERO CTA)
+// ============================================
+
+.vp-hero-actions {
+  .vp-hero-action-button {
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &.primary {
+      background: var(--tech-gradient);
+      border: none;
+      box-shadow: var(--tech-glow);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 30px rgba(0, 212, 170, 0.5);
+      }
+    }
+
+    &.secondary {
+      background: transparent;
+      border: 2px solid var(--vp-c-accent);
+      color: var(--vp-c-accent);
+
+      &:hover {
+        background: var(--vp-c-accent-soft);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+// ============================================
+// CONTENT AREA ENHANCEMENTS
+// ============================================
+
+.vp-content {
+  // Headings with accent underline
+  h1,
+  h2,
+  h3 {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--tech-gradient);
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+  }
+
+  h1::after {
+    width: 80px;
+  }
+  h2::after {
+    width: 60px;
+  }
+  h3::after {
+    width: 40px;
+  }
+
+  // Links with gradient hover
+  a {
+    color: var(--vp-c-accent);
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: var(--vp-c-accent-hover);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+
+  // Code blocks styling
+  div[class*='language-'] {
+    border-radius: 12px;
+    border: 1px solid var(--vp-c-divider);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      color: var(--vp-c-accent);
+      font-weight: 600;
+    }
+  }
+
+  // Inline code
+  code:not([class*='language-']) {
+    background: var(--vp-c-bg-elv);
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 6px;
+    padding: 2px 6px;
+    color: var(--vp-c-accent);
+    font-size: 0.9em;
+  }
+}
+
+// ============================================
+// CUSTOM CONTAINERS (TIP, WARNING, DANGER)
+// ============================================
+
+.custom-container {
+  border-radius: 12px;
+  border-left-width: 4px;
+  padding: 1rem 1.5rem;
+
+  &.tip {
+    background: rgba(0, 212, 170, 0.1);
+    border-color: var(--vp-c-accent);
+
+    .custom-container-title {
+      color: var(--vp-c-accent);
+    }
+  }
+
+  &.warning {
+    background: rgba(251, 191, 36, 0.1);
+    border-color: #fbbf24;
+
+    .custom-container-title {
+      color: #fbbf24;
+    }
+  }
+
+  &.danger {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+
+    .custom-container-title {
+      color: #ef4444;
+    }
+  }
+}
+
+// ============================================
+// TABLE ENHANCEMENTS
+// ============================================
+
+table {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+
+  thead {
+    background: var(--vp-c-bg-elv);
+
+    th {
+      border-bottom: 2px solid var(--vp-c-accent);
+      font-weight: 600;
+    }
+  }
+
+  tbody tr {
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: var(--vp-c-control-hover);
+    }
+  }
+}
+
+// ============================================
+// SCROLLBAR STYLING
+// ============================================
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-border);
+  border-radius: 4px;
+
+  &:hover {
+    background: var(--vp-c-accent);
+  }
+}
+
+// ============================================
+// FOOTER ENHANCEMENTS
+// ============================================
+
+.vp-page-footer {
+  border-top: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-alt);
+
+  .footer {
+    color: var(--vp-c-text-mute);
+
+    a {
+      color: var(--vp-c-accent);
+    }
+  }
+}
+
+// ============================================
+// RESPONSIVE ADJUSTMENTS
+// ============================================
+
+@media (max-width: 719px) {
+  .vp-hero .vp-hero-info-wrapper h1 {
+    font-size: 2rem;
+  }
+
+  .vp-hero-actions .vp-hero-action-button {
+    padding: 10px 20px;
+  }
+}

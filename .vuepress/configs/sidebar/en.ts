@@ -1,6 +1,6 @@
-import type { SidebarConfig } from '@vuepress/theme-default';
+import type { SidebarOptions } from '@vuepress/theme-default';
 
-export const en: SidebarConfig = [
+export const en: SidebarOptions = [
   '/en/guide/README.md',
   '/en/faq/README.md',
   {

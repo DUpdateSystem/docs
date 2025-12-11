@@ -1,6 +1,6 @@
-import type { NavbarConfig } from '@vuepress/theme-default';
+import type { NavbarOptions } from '@vuepress/theme-default';
 
-export const zh: NavbarConfig = [
+export const zh: NavbarOptions = [
   { text: '用户指南', link: '/guide/' },
   { text: '常见问题', link: '/faq/' },
   { text: '开发者文档', link: '/dev/' },

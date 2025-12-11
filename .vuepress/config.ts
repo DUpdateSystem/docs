@@ -1,8 +1,9 @@
-import type { DefaultThemeOptions } from 'vuepress';
+import { viteBundler } from '@vuepress/bundler-vite';
+import { defaultTheme } from '@vuepress/theme-default';
 import { defineUserConfig } from 'vuepress';
 import { navbar, sidebar } from './configs';
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig({
   // 站点配置
   lang: 'zh-CN',
   title: 'Distributed Update System',
@@ -23,9 +24,11 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
   },
 
+  // 打包工具
+  bundler: viteBundler(),
+
   // 主题配置
-  theme: '@vuepress/theme-default',
-  themeConfig: {
+  theme: defaultTheme({
     logo: '/logo.png',
     repo: 'DUpdateSystem',
     locales: {
@@ -60,7 +63,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
         // a11y
         openInNewWindow: '在新窗口打开',
-        toggleDarkMode: '切换夜间模式',
+        toggleColorMode: '切换颜色模式',
         toggleSidebar: '切换侧边栏',
       },
 
@@ -79,5 +82,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
     docsRepo: 'DUpdateSystem/docs',
     docsBranch: 'master',
-  },
+    colorMode: 'dark',
+    colorModeSwitch: true,
+  }),
 });
