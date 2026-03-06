@@ -10,7 +10,7 @@
   "devDependencies": {
     "@moonbegonia/prettier-config": "^1.1.0",
     "@vuepress/bundler-vite": "2.0.0-rc.26",
-    "@vuepress/theme-default": "2.0.0-rc.124",
+    "@vuepress/theme-default": "2.0.0-rc.125",
     "husky": "^9.1.7",
     "prettier": "^3.7.4",
     "pretty-quick": "^4.2.2",
