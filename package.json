@@ -19,5 +19,12 @@
   },
   "engines": {
     "node": ">=20.9.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "undici": "7.25.0",
+      "picomatch": "4.0.4",
+      "yaml": "2.8.3"
+    }
   }
 }
