@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  undici: 8.1.0
+  undici: 8.2.0
   picomatch: 4.0.4
   yaml: 2.8.3
 
@@ -1665,8 +1665,8 @@ packages:
   undici-types@7.16.0:
     resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
 
-  undici@8.1.0:
-    resolution: {integrity: sha512-E9MkTS4xXLnRPYqxH2e6Hr2/49e7WFDKczKcCaFH4VaZs2iNvHMqeIkyUAD9vM8kujy9TjVrRlQ5KkdEJxB2pw==}
+  undici@8.2.0:
+    resolution: {integrity: sha512-Z+4Hx9GE26Lh9Upwfnc8C7SsrpBPGaM/Gm6kMFtiG7c+5IvQKlXi/t+9x9DrrCh29cww5TSP9YdVaBcnLDs5fQ==}
     engines: {node: '>=22.19.0'}
 
   unified@11.0.5:
@@ -2810,7 +2810,7 @@ snapshots:
       parse5: 7.3.0
       parse5-htmlparser2-tree-adapter: 7.1.0
       parse5-parser-stream: 7.1.2
-      undici: 8.1.0
+      undici: 8.2.0
       whatwg-mimetype: 4.0.0
 
   chokidar@4.0.3:
@@ -3558,7 +3558,7 @@ snapshots:
 
   undici-types@7.16.0: {}
 
-  undici@8.1.0: {}
+  undici@8.2.0: {}
 
   unified@11.0.5:
     dependencies:
