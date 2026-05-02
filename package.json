@@ -24,7 +24,7 @@
     "overrides": {
       "undici": "8.2.0",
       "picomatch": "4.0.4",
-      "yaml": "2.8.3"
+      "yaml": "2.8.4"
     }
   }
 }
