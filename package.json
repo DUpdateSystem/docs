@@ -23,7 +23,7 @@
   "pnpm": {
     "overrides": {
       "undici": "8.2.0",
-      "picomatch": "4.0.4",
+      "picomatch": "4.0.7",
       "yaml": "2.8.4"
     }
   }
