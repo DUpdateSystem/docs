@@ -1,5 +1,5 @@
 import { viteBundler } from '@vuepress/bundler-vite';
-import { defaultTheme } from '@vuepress/theme-default';
+import { themeDefault } from '@vuepress/theme-default';
 import { defineUserConfig } from 'vuepress';
 import { navbar, sidebar } from './configs';
 
@@ -28,7 +28,7 @@ export default defineUserConfig({
   bundler: viteBundler(),
 
   // 主题配置
-  theme: defaultTheme({
+  theme: themeDefault({
     logo: '/logo.png',
     repo: 'DUpdateSystem',
     locales: {
