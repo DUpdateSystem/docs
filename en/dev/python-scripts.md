@@ -108,7 +108,7 @@ Python 数组
 
 1. app_id(dict)
    客户端上传的需要检查的软件信息
-   与 [get_release 函数](#get_release)相同
+   与 [get_release 函数](#get-release)相同
 2. asset_index(list)
    请求下载的文件索引数组
    这是一个由数字组成的数组，从左到右分别表示版本号索引和下载文件索引（从 0 开始数）。
@@ -147,7 +147,7 @@ Python 数组或 JSON 数组：
    用来即时返回数据的数据类，配合 return_value 函数返回数据
 
 2. app_id_list(list)  
-   客户端上传的**多个**需要检查的软件的信息(每一项的格式参考 [get_release 函数](#get_release))
+   客户端上传的**多个**需要检查的软件的信息(每一项的格式参考 [get_release 函数](#get-release))
 
 3. auth(dict)
    软件源身份验证信息
@@ -160,7 +160,7 @@ return_value(generator_cache: GeneratorCache, app_id: dict, value)
 
 > - generator_cache: 这个函数的同名输入值
 > - app_id: 返回的 value 对应的 app_id
-> - value: [get_release 函数](#get_release) 函数的返回值
+> - value: [get_release 函数](#get-release) 函数的返回值
 
 ## 预置函数
 
