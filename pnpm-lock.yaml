@@ -7,7 +7,7 @@ settings:
 overrides:
   brace-expansion@1: ^1.1.21
   source-map-js: ^1.2.2
-  undici: 8.13.1
+  undici: 8.14.0
   picomatch: 4.0.7
   yaml: 2.9.1
 
@@ -1899,8 +1899,8 @@ packages:
   undici-types@7.16.0:
     resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
 
-  undici@8.13.1:
-    resolution: {integrity: sha512-Kt7EaPjh0s93lJH/PmW3d5rhkcpUa6fS3jqZ7+YGxNd9L7Xy/i827xe4C2uhhq+pJebM4tQOl5AgHmW11G5Skg==}
+  undici@8.14.0:
+    resolution: {integrity: sha512-MqM6wqORYo0jb1WFUwFKZTFWFz6VeBMPj9op5Hq+RvlrQjISQCyLEfx5+/iqOLWC/LL1HliJ5t0NP1BgYpXeVQ==}
     engines: {node: '>=22.19.0'}
 
   unified@11.0.5:
@@ -3323,7 +3323,7 @@ snapshots:
       parse5: 7.3.0
       parse5-htmlparser2-tree-adapter: 7.1.0
       parse5-parser-stream: 7.1.2
-      undici: 8.13.1
+      undici: 8.14.0
       whatwg-mimetype: 4.0.0
 
   chokidar@5.0.0:
@@ -4162,7 +4162,7 @@ snapshots:
 
   undici-types@7.16.0: {}
 
-  undici@8.13.1: {}
+  undici@8.14.0: {}
 
   unified@11.0.5:
     dependencies:
